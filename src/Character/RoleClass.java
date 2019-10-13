@@ -37,22 +37,10 @@ public class RoleClass {
     }
     //RoleClass(){}
 
-    static void showCharacterStats(RoleClass obj){
+    static void showROLECLASSStats(RoleClass obj){
 
         System.out.printf("Character stats\nstrength: %d\nintellect: %d\nleadership: %d\n", obj.getStrength(), obj.getIntellect(), obj.getLeadership());
 
     }
 }
 
-class RoleList {
-    //public static void main(String[] args) {
-        private RoleClass warrior = new RoleClass(100, 50, 100);
-        private RoleClass wizard = new RoleClass(50, 100, 100);
-        public RoleClass[] rolesList = {warrior, wizard};
-        //System.out.println(List[0]);
-        //RoleClass.showCharacterStats(warrior);
-    //}
-
-
-
-}
