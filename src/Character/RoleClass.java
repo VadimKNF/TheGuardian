@@ -1,9 +1,14 @@
 package Character;
 
-public class RoleClass {
+class RoleClass {
+    private String className;
     private int strength;
     private int intellect;
     private int leadership;
+
+    public void setClassName(String className){
+        this.className = className;
+    }
 
     public void setStrength(int strength){
         this.strength = strength;
@@ -17,6 +22,8 @@ public class RoleClass {
         this.leadership = leadership;
     }
 
+    public String getClassName(){return className;}
+
     public int getStrength(){
         return strength;
     }
@@ -29,17 +36,21 @@ public class RoleClass {
         return leadership;
     }
 
-
-    RoleClass(int strength, int intellect, int leadership){
+    RoleClass(String className, int strength, int intellect, int leadership){
+        this.className = className;
         this.strength = strength;
         this.intellect = intellect;
         this.leadership = leadership;
     }
-    //RoleClass(){}
+    RoleClass(){}
 
-    static void showROLECLASSStats(RoleClass obj){
+    static String showClassName(RoleClass obj){
+        return obj.getClassName();
+    }
 
-        System.out.printf("Character stats\nstrength: %d\nintellect: %d\nleadership: %d\n", obj.getStrength(), obj.getIntellect(), obj.getLeadership());
+    static void showStats(RoleClass obj){
+
+        System.out.printf("Character stats\n%s \nstrength: %d\nintellect: %d\nleadership: %d\n", obj.getClassName(), obj.getStrength(), obj.getIntellect(), obj.getLeadership());
 
     }
 }
