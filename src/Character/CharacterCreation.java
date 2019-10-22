@@ -17,8 +17,8 @@ public class CharacterCreation {
         System.out.println(newPlayer.getRoleY());
         newPlayer.setName(name);
 
-        Player.showCharacterInformation(newPlayer);
-        RoleClass.showStats(newPlayer.getRole());
+        //Player.showCharacterInformation(newPlayer);
+        //RoleClass.showStats(newPlayer.getRole());
     }
 
 }
@@ -27,38 +27,19 @@ class Player {
     private String[] genderList = {"male", "female"};
     private byte genderX;
     private String gender = genderList[genderX];
-    private RoleClass warrior = new RoleClass("warrior", 100, 50, 100);
-    private RoleClass wizard = new RoleClass("wizard", 50, 100, 100);
+    private RoleClass warrior = new RoleClass("warrior", 10, 5, 10);
+    private RoleClass wizard = new RoleClass("wizard", 5, 10, 10);
     private RoleClass[] rolesList = {warrior, wizard};
     private byte roleY;
     private RoleClass role = rolesList[roleY];
-
-
+    private int healthPoints = 100;
+    private int weaponAttack = 1;
+    private int armorDefence = 1;
 
     public static void showCharacterInformation(Player obj){
         System.out.printf("Character information\nname: %s \ngender: %s\nclass: %s\n", obj.getName(), obj.getGender(), RoleClass.showClassName(obj.role));
 
     }
-
-    public byte getRoleY(){
-        return roleY;
-    }
-    public void setRole(byte roleY) {
-        if (roleY == 1 || roleY == 2){
-            roleY--;
-            this.role = rolesList[roleY];
-        } else {
-            System.out.println("you have to pick 1 or 2");
-        }
-    }
-    public RoleClass getRole(){
-        return role;
-    }
-
-    public String getName() {
-        return name;
-    }
-
 
     public void setName(String name) {
         this.name = name;
@@ -72,13 +53,41 @@ class Player {
             System.out.println("please, pick 1 or 2");
         }
     }
-
-    public byte getGenderX() {
-        return genderX;
+    public void setRole(byte roleY) {
+        if (roleY == 1 || roleY == 2){
+            roleY--;
+            this.role = rolesList[roleY];
+        } else {
+            System.out.println("you have to pick 1 or 2");
+        }
+    }
+    public void setHealthPoints(int healthPoints){
+        this.healthPoints = healthPoints;
+    }
+    public void setWeaponAttack(int weaponAttack){
+        this.weaponAttack = weaponAttack;
+    }
+    public void setArmorDefence(int armorDefence){
+        this.armorDefence = armorDefence;
     }
 
+    public String getName() {
+        return name;
+    }
     public String getGender(){
         return gender;
     }
+    public byte getGenderX() {
+        return genderX;
+    }
+    public RoleClass getRole(){
+        return role;
+    }
+    public byte getRoleY(){
+        return roleY;
+    }
+    public int getHealthPoints(){return healthPoints;}
+    public int getWeaponAttack(){return weaponAttack;}
+    public int getArmorDefence(){return armorDefence;}
 
 }
