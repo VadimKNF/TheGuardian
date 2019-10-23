@@ -22,6 +22,11 @@ class Unit {
     public int getArmorStat(){ return armorStat; }
     public int getHealthPoint(){ return healthPoint; }
 
+    public static int attackCounter(int mainParam, int weaponStat) { return mainParam * weaponStat; }
+    public static int defenceCounter(int mainParam, int armorStat){
+        return mainParam * armorStat;
+    }
+
     Unit(){}
 
     Unit (String name, int strength, int intellect, int weaponStat, int armorStat, int healthPoint) {
@@ -37,5 +42,8 @@ class Unit {
 class UnitsList{
     public static void main(String[] args) {
         Unit wolf = new Unit("wolf", 3, 1, 3, 1, 100);
+
+        System.out.println(wolf.attackCounter(wolf.getStrength(), wolf.getWeaponStat()));
+        System.out.println(wolf.defenceCounter(wolf.getStrength(), wolf.getArmorStat()));
     }
 }
