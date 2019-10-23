@@ -15,10 +15,10 @@ public class CharacterCreation {
         newPlayer.setRole(roleClass);
         newPlayer.setGender(gender);
         System.out.println(newPlayer.getRoleY());
-        newPlayer.setName(name);
 
-        //Player.showCharacterInformation(newPlayer);
-        //RoleClass.showStats(newPlayer.getRole());
+
+        Player.showCharacterInformation(newPlayer);
+        RoleClass.showStats(newPlayer.getRole());
     }
 
 }
@@ -69,5 +69,7 @@ class Player extends Unit {
         return roleY;
     }
 
+    //Player(String name, int healthPoints, int weaponStats, int armorStats, int strength, int intellect){
+    //}
 
 }
