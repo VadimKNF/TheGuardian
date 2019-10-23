@@ -22,8 +22,8 @@ public class CharacterCreation {
     }
 
 }
-class Player {
-    private String name;
+class Player extends Unit {
+
     private String[] genderList = {"male", "female"};
     private byte genderX;
     private String gender = genderList[genderX];
@@ -32,17 +32,11 @@ class Player {
     private RoleClass[] rolesList = {warrior, wizard};
     private byte roleY;
     private RoleClass role = rolesList[roleY];
-    private int healthPoints = 100;
-    private int weaponAttack = 1;
-    private int armorDefence = 1;
+
 
     public static void showCharacterInformation(Player obj){
         System.out.printf("Character information\nname: %s \ngender: %s\nclass: %s\n", obj.getName(), obj.getGender(), RoleClass.showClassName(obj.role));
 
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public void setGender(byte genderX) {
@@ -61,19 +55,7 @@ class Player {
             System.out.println("you have to pick 1 or 2");
         }
     }
-    public void setHealthPoints(int healthPoints){
-        this.healthPoints = healthPoints;
-    }
-    public void setWeaponAttack(int weaponAttack){
-        this.weaponAttack = weaponAttack;
-    }
-    public void setArmorDefence(int armorDefence){
-        this.armorDefence = armorDefence;
-    }
 
-    public String getName() {
-        return name;
-    }
     public String getGender(){
         return gender;
     }
@@ -86,8 +68,6 @@ class Player {
     public byte getRoleY(){
         return roleY;
     }
-    public int getHealthPoints(){return healthPoints;}
-    public int getWeaponAttack(){return weaponAttack;}
-    public int getArmorDefence(){return armorDefence;}
+
 
 }
