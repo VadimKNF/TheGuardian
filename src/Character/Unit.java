@@ -29,6 +29,6 @@ class Unit extends RoleClass {
 
 class UnitsList{
     public static void main(String[] args) {
-        Unit wolf = new Unit("wolf", "enemy", 3, 1, 0, 3, 1, 100);
+
     }
 }
