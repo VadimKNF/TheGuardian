@@ -1,4 +1,4 @@
-package Character;
+package Actions;
 
 public class Actions {
     private int weaponStat;

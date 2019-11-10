@@ -1,6 +1,10 @@
-package Character;
+package Units;
 
-class Unit extends RoleClass {
+import Roles.RoleClass;
+
+import java.io.Serializable;
+
+public class Unit extends RoleClass implements Serializable {
     private String name;
     private int weaponStat;
     private int armorStat;
@@ -16,19 +20,13 @@ class Unit extends RoleClass {
     public int getArmorStat(){ return armorStat; }
     public int getHealthPoint(){ return healthPoint; }
 
-    Unit(){}
+    public Unit(){}
 
-    Unit (String name, String className, int strength, int intellect, int leadership, int weaponStat, int armorStat, int healthPoint) {
+    public Unit (String name, String className, int strength, int intellect, int leadership, int weaponStat, int armorStat, int healthPoint) {
         super (className, strength, intellect, leadership);
         this.name = name;
         this.weaponStat = weaponStat;
         this.armorStat = armorStat;
         this.healthPoint = healthPoint;
-    }
-}
-
-class UnitsList{
-    public static void main(String[] args) {
-
     }
 }

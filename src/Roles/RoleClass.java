@@ -1,6 +1,8 @@
-package Character;
+package Roles;
 
-class RoleClass {
+import java.io.Serializable;
+
+public class RoleClass implements Serializable {
     private String className;
     private int strength;
     private int intellect;
@@ -36,19 +38,19 @@ class RoleClass {
         return leadership;
     }
 
-    RoleClass(String className, int strength, int intellect, int leadership){
+    public RoleClass(String className, int strength, int intellect, int leadership){
         this.className = className;
         this.strength = strength;
         this.intellect = intellect;
         this.leadership = leadership;
     }
-    RoleClass(){}
+    public RoleClass(){}
 
-    static String showClassName(RoleClass obj){
+    public static String showClassName(RoleClass obj){
         return obj.getClassName();
     }
 
-    static void showStats(RoleClass obj){
+    public static void showStats(RoleClass obj){
 
         System.out.printf("Character stats\n%s \nstrength: %d\nintellect: %d\nleadership: %d\n", obj.getClassName(), obj.getStrength(), obj.getIntellect(), obj.getLeadership());
 
