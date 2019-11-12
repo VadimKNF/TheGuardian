@@ -17,6 +17,6 @@ public class Enemy {
             obj.setLeadership(x);
             Write.writeInFile(obj, "player.bin");
         }
-        else{ System.out.println("You have to pick 1 or 2"); }
+        else { System.out.println("You have to pick 1 or 2"); }
     }
 }
