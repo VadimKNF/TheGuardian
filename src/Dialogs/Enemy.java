@@ -1,5 +1,6 @@
 package Dialogs;
 import Character.*;
+import Files.Write;
 import Units.*;
 
 import java.util.Scanner;
@@ -14,6 +15,7 @@ public class Enemy {
             System.out.printf("You've escaped now you need to change your pants also your leadership decreased by %d\n", obj1.getLeadership());
             int x = obj.getLeadership() - obj1.getLeadership();
             obj.setLeadership(x);
+            Write.writeInFile(obj, "player.bin");
         }
         else{ System.out.println("You have to pick 1 or 2"); }
     }
